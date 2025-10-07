@@ -35,15 +35,33 @@ const Projects = () => {
     },
     {
       title: "Portfolio Interactivo",
-      description:"Sitio web personal con animaciones avanzadas y diseño moderno utilizando Angular y Firebase.",
-      technologies: ["Angular", "TypeScript", "Firebase", "SCSS"],
-      images: ["/images/portfolio1.jpg"],
+      description: "Portfolio personal con animaciones fluidas, diseño moderno y estructura responsiva. Incluye secciones de presentación, proyectos y contacto, ofreciendo una navegación dinámica y visualmente atractiva.",
+      technologies: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+      images: [
+        "/images/PortfolioPersonal/PortfolioPersonal1.png",
+        "/images/PortfolioPersonal/PortfolioPersonal2.png",
+        "/images/PortfolioPersonal/PortfolioPersonal3.png",
+        "/images/PortfolioPersonal/PortfolioPersonal4.png",
+        "/images/PortfolioPersonal/PortfolioPersonal5.png",
+        "/images/PortfolioPersonal/PortfolioPersonal6.png",
+      ],
+      demoUrl: "https://portfolio-antonio-riveros.netlify.app/",
+      githubUrl: "https://github.com/Xxtoni7/Portfolio_Personal",
     },
     {
-      title: "API RESTful",
-      description:"API robusta para gestión de usuarios y autenticación con JWT, desarrollada con .NET Core y Entity Framework.",
-      technologies: [".NET Core", "Entity Framework", "JWT", "Swagger"],
-      images: ["/images/api1.jpg"],
+      title: "Sistema de Gestión para Ferretería",
+      description: "Sistema CRUD desarrollado para una ferretería, compuesto por tres microservicios independientes: productos, clientes y órdenes. Cada servicio permite crear, editar y eliminar registros, y el módulo de órdenes valida la existencia de clientes y stock disponible antes de generar una venta. Incluye un frontend para la interacción del usuario, garantizando una gestión integral y eficiente del negocio.",
+      technologies: ["ASP.NET Core Web API", "SQL Server", "Blazor"],
+      images: [
+        "/images/GestionFerreteria/GestionFerreteria1.png",
+        "/images/GestionFerreteria/GestionFerreteria2.png",
+        "/images/GestionFerreteria/GestionFerreteria3.png",
+        "/images/GestionFerreteria/GestionFerreteria4.png",
+        "/images/GestionFerreteria/GestionFerreteria5.png",
+        "/images/GestionFerreteria/GestionFerreteria6.png",
+      ],
+      demoUrl: "https://ortrefacciones1.netlify.app/",
+      githubUrl: "https://github.com/Xxtoni7/ORT_Refacciones",
     },
   ];
 
@@ -162,7 +180,7 @@ const Projects = () => {
                         className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105"
                       >
                         <ExternalLink className="mr-2" size={18} />
-                        Ver demo 
+                        Sin Url
                       </Button>
                     )}
 
