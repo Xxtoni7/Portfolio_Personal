@@ -6,11 +6,15 @@ import { useToast } from './ui/use-toast';
 
 const Contact = () => {
   const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -19,9 +23,9 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "⚠️ Campos incompletos",
@@ -31,20 +35,52 @@ const Contact = () => {
       return;
     }
 
-    toast({
-      title: "🚧 Función en desarrollo",
-      description: "¡El envío de mensajes estará disponible pronto! Solicita esta funcionalidad en tu próximo mensaje. 🚀",
-    });
+    setLoading(true); 
 
-    setFormData({ name: '', email: '', message: '' });
+    const formDataToSend = new FormData();
+    formDataToSend.append("access_key", "1e4cae8f-2e19-4ae4-904a-cc00da6594b9"); 
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("message", formData.message);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", { 
+        method: "POST",
+        body: formDataToSend
+      });
+
+      if (response.ok) {
+        toast({
+          title: "✅ ¡Mensaje enviado con éxito!",
+          description: "Gracias por contactarte, te responderé pronto.",
+          duration: 5000,
+        });
+        setSuccess(true); 
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast({
+          title: "❌ Error al enviar",
+          description: "Hubo un problema al enviar tu mensaje. Inténtalo nuevamente.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "⚠️ Error de conexión",
+        description: "Verifica tu conexión e intenta nuevamente.",
+        variant: "destructive"
+      });
+    }
+
+    setLoading(false); 
   };
 
   const handleSocialClick = (platform) => {
     if (platform === 'GitHub') {
-    window.open('https://github.com/Xxtoni7', '_blank');
-  } else if (platform === 'LinkedIn') {
-    window.open('https://www.linkedin.com/in/toni-riveros316321/', '_blank');
-  }
+      window.open('https://github.com/Xxtoni7', '_blank');
+    } else if (platform === 'LinkedIn') {
+      window.open('https://www.linkedin.com/in/toni-riveros316321/', '_blank');
+    }
   };
 
   return (
@@ -124,11 +160,22 @@ const Contact = () => {
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={loading} 
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-6 rounded-lg shadow-lg shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
                 >
-                  <Send className="mr-2" size={20} />
-                  Enviar Mensaje
+                  {loading ? "Enviando..." : (
+                    <>
+                      <Send className="mr-2" size={20} />
+                      Enviar Mensaje
+                    </>
+                  )}
                 </Button>
+
+                {success && ( 
+                  <p className="text-green-500 text-center mt-3">
+                    ✅ ¡Tu mensaje fue enviado correctamente!
+                  </p>
+                )}
               </form>
             </div>
           </motion.div>
@@ -180,7 +227,7 @@ const Contact = () => {
                   <span>Disponible vía formulario</span>
                 </p>
                 <p className="text-sm text-slate-400 mt-4">
-                  Respondo todos los mensajes en un plazo de 12-48 horas.
+                  Respondo todos los mensajes en un plazo de 12-24 horas.
                 </p>
               </div>
             </div>

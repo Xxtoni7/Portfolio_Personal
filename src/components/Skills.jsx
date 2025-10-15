@@ -10,9 +10,9 @@ const Skills = () => {
       color: "from-cyan-400 to-blue-500",
       skills: [
         { name: "HTML", level: 90 },
-        { name: "CSS", level: 75 },
-        { name: "Bootstrap", level: 80 },
-        { name: "JavaScript", level: 85 },
+        { name: "CSS", level: 65 },
+        { name: "Bootstrap", level: 70 },
+        { name: "JavaScript", level: 80 },
         { name: "React", level: 65 },
         { name: "Blazor (ASP.NET)", level: 65 },
       ]
@@ -23,10 +23,9 @@ const Skills = () => {
       color: "from-purple-400 to-pink-500",
       skills: [
         { name: "C#", level: 85 },
-        { name: ".NET", level: 90 },
+        { name: ".NET", level: 85 },
         { name: ".NET Core / ASP.NET MVC", level: 80 },
         { name: "Entity Framework", level: 75 },
-        { name: "Razor Pages", level: 70 },
         { name: "Node.js", level: 70 }
       ]
     },

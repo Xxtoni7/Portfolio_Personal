@@ -60,8 +60,7 @@ const Projects = () => {
         "/images/GestionFerreteria/GestionFerreteria5.png",
         "/images/GestionFerreteria/GestionFerreteria6.png",
       ],
-      demoUrl: "https://ortrefacciones1.netlify.app/",
-      githubUrl: "https://github.com/Xxtoni7/ORT_Refacciones",
+      githubUrl: "https://github.com/Xxtoni7/GestionFerreteria",
     },
   ];
 
