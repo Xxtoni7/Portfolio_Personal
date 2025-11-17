@@ -46,7 +46,7 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg text-slate-300 leading-relaxed">
-              Soy un desarrollador Full Stack, apasionado por la tecnología y el aprendizaje continuo. 
+              Soy un desarrollador Full Stack con +1 año de experiencia, apasionado por la tecnología y el aprendizaje continuo. 
               Me encanta enfrentar nuevos desafíos y crear soluciones innovadoras que marquen la diferencia.
             </p>
 

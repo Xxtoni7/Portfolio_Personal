@@ -4,22 +4,55 @@ import { ExternalLink, Github } from 'lucide-react';
 import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 
+// ------------------ MOCKUPS ----------------------------------
+
+const BrowserMockup = ({ src }) => {
+  return (
+    <div className="w-full bg-white border rounded-xl shadow-xl overflow-hidden">
+      <div className="flex items-center gap-2 px-4 py-2 bg-gray-200">
+        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+      </div>
+      <img src={src} className="w-full h-auto" />
+    </div>
+  );
+};
+
+const PhoneMockup = ({ src }) => {
+  return (
+    <div className="mx-auto bg-black rounded-[2.2rem] p-3 shadow-2xl w-[13rem] h-[26rem] overflow-hidden">
+      <img src={src} className="rounded-2xl w-full h-full object-cover" />
+    </div>
+  );
+};
+
+// -------------------------------------------------------------
+
 const Projects = () => {
   const { toast } = useToast();
 
   const projects = [
     {
+      title: " Micromecánica Rotania SRL",
+      description: "Diseño y desarrollo de una landing page moderna, minimalista y totalmente responsiva para la empresa Micromecánica Rotania SRL. El sitio presenta una experiencia clara, visual y ágil, con secciones estratégicas que comunican la identidad de la empresa y sus principales servicios: taller mecánico, repuestos y estética automotor. Incluye animaciones suaves, navegación optimizada y componentes UI de alto impacto orientados a la conversión.",
+      technologies: ["React", "Vite", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+      demoUrl: "https://micromecanicarotania.com/",
+      githubUrl: "https://github.com/Xxtoni7/Micromecanica-Rotania-",
+
+      desktopImage: "/images/MicromecanicaRotania/RotaniaPc.png",
+      mobileImage: "/images/MicromecanicaRotania/RotaniaMovil.png",
+    },
+    {
       title: "OrtRefacciones",
       description: "Landing page desarrollada para la empresa ORTRefacciones, enfocada en mostrar su identidad y servicios. Incluye secciones de presentación, contacto y galería de refacciones realizadas, brindando una experiencia moderna y responsive.",
       technologies: ["React", "Vite", "Tailwind CSS", "HTML", "CSS", "JavaScript"],
-      images: [
-        "/images/OrtRefacciones/OrtRefacciones1.png",
-        "/images/OrtRefacciones/OrtRefacciones2.png",
-        "/images/OrtRefacciones/OrtRefacciones3.png",
-        "/images/OrtRefacciones/Ortrefacciones4.png",
-      ],
+
       demoUrl: "https://ortrefacciones1.netlify.app/",
       githubUrl: "https://github.com/Xxtoni7/ORT_Refacciones",
+
+      desktopImage: "/images/OrtRefacciones/OrtRefacciones1.png",
+      mobileImage: "/images/OrtRefacciones/OrtMovil.png",
     },
     {
       title: "E-Commerce Responsive",
@@ -32,21 +65,9 @@ const Projects = () => {
         "/images/EcommerceProy/EcommerceProy4.png",
       ],
       githubUrl: "https://github.com/franciscojrey/ecommerce-istea",
-    },
-    {
-      title: "Portfolio Interactivo",
-      description: "Portfolio personal con animaciones fluidas, diseño moderno y estructura responsiva. Incluye secciones de presentación, proyectos y contacto, ofreciendo una navegación dinámica y visualmente atractiva.",
-      technologies: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
-      images: [
-        "/images/PortfolioPersonal/PortfolioPersonal1.png",
-        "/images/PortfolioPersonal/PortfolioPersonal2.png",
-        "/images/PortfolioPersonal/PortfolioPersonal3.png",
-        "/images/PortfolioPersonal/PortfolioPersonal4.png",
-        "/images/PortfolioPersonal/PortfolioPersonal5.png",
-        "/images/PortfolioPersonal/PortfolioPersonal6.png",
-      ],
-      demoUrl: "https://portfolio-antonio-riveros.netlify.app/",
-      githubUrl: "https://github.com/Xxtoni7/Portfolio_Personal",
+
+      // desktopImage: "/mockups/ecommerce-desktop.png",
+      // mobileImage: "/mockups/ecommerce-mobile.png",
     },
     {
       title: "Sistema de Gestión para Ferretería",
@@ -61,6 +82,9 @@ const Projects = () => {
         "/images/GestionFerreteria/GestionFerreteria6.png",
       ],
       githubUrl: "https://github.com/Xxtoni7/GestionFerreteria",
+
+      // desktopImage: "/mockups/ferreteria-desktop.png",
+      // mobileImage: "/mockups/ferreteria-mobile.png",
     },
   ];
 
@@ -111,33 +135,53 @@ const Projects = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="glass-effect rounded-2xl overflow-hidden border border-cyan-400/20 hover:border-cyan-400/50 transition-all duration-300 group"
               >
-                {/* Imagen con navegación */}
-                <div className="relative overflow-hidden h-52 md:h-56 group">
-                  <img
-                    className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500 rounded-t-2xl shadow-lg"
-                    alt={project.title}
-                    src={project.images[currentImage]}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-60"></div>
+                
+                {/* ---------- MOCKUPS o IMÁGENES ----------- */}
+                <div className="relative overflow-hidden p-4 bg-slate-900/40 rounded-t-2xl">
+                  {project.desktopImage || project.mobileImage ? (
+                    <div className="flex items-center justify-center gap-6">
+                      {project.desktopImage && (
+                        <div className="w-2/3">
+                          <BrowserMockup src={project.desktopImage} />
+                        </div>
+                      )}
 
-                  {/* Botones de cambio de imagen */}
-                  {project.images.length > 1 && (
-                    <>
-                      <button
-                        onClick={prevImage}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-slate-900/60 hover:bg-slate-900/90 text-white p-2 rounded-full transition"
-                      >
-                        ‹
-                      </button>
-                      <button
-                        onClick={nextImage}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-slate-900/60 hover:bg-slate-900/90 text-white p-2 rounded-full transition"
-                      >
-                        ›
-                      </button>
-                    </>
+                      {project.mobileImage && (
+                        <div className="w-1/3">
+                          <PhoneMockup src={project.mobileImage} />
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    // ⬇ SI NO HAY MOCKUPS, USA TUS IMÁGENES NORMALES ⬇
+                    <div className="relative h-52 md:h-56 group">
+                      <img
+                        className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500 rounded-t-2xl shadow-lg"
+                        alt={project.title}
+                        src={project.images[currentImage]}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-60"></div>
+
+                      {project.images.length > 1 && (
+                        <>
+                          <button
+                            onClick={prevImage}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-slate-900/60 hover:bg-slate-900/90 text-white p-2 rounded-full transition"
+                          >
+                            ‹
+                          </button>
+                          <button
+                            onClick={nextImage}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-slate-900/60 hover:bg-slate-900/90 text-white p-2 rounded-full transition"
+                          >
+                            ›
+                          </button>
+                        </>
+                      )}
+                    </div>
                   )}
                 </div>
+                {/* ----------------------------------------- */}
 
                 {/* Contenido del proyecto */}
                 <div className="p-6 space-y-4">
