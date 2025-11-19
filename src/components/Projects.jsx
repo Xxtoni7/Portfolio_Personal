@@ -136,24 +136,25 @@ const Projects = () => {
                 className="glass-effect rounded-2xl overflow-hidden border border-cyan-400/20 hover:border-cyan-400/50 transition-all duration-300 group"
               >
                 
-                {/* ---------- MOCKUPS o IMÁGENES ----------- */}
+                {/*  MOCKUPS o IMÁGENES  */}
                 <div className="relative overflow-hidden p-4 bg-slate-900/40 rounded-t-2xl">
                   {project.desktopImage || project.mobileImage ? (
-                    <div className="flex items-center justify-center gap-6">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+
                       {project.desktopImage && (
-                        <div className="w-2/3">
+                        <div className="hidden md:block w-2/3">
                           <BrowserMockup src={project.desktopImage} />
                         </div>
                       )}
 
                       {project.mobileImage && (
-                        <div className="w-1/3">
+                        <div className="w-full flex justify-center md:w-1/3">
                           <PhoneMockup src={project.mobileImage} />
                         </div>
                       )}
                     </div>
                   ) : (
-                    // ⬇ SI NO HAY MOCKUPS, USA TUS IMÁGENES NORMALES ⬇
+                    //  SI NO HAY MOCKUPS, USA TUS IMÁGENES NORMALES 
                     <div className="relative h-52 md:h-56 group">
                       <img
                         className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500 rounded-t-2xl shadow-lg"
