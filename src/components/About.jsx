@@ -58,7 +58,7 @@ const About = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-cyan-400 mb-2">Formación Académica</h3>
                   <p className="text-slate-300 leading-relaxed">
-                    Soy estudiante de <span className="font-semibold text-cyan-400">3er año</span> de la Tecnicatura Superior en Análisis de Sistemas en el <span className="font-semibold text-white">Instituto Superior Tecnológico Empresarial Argentino.</span> Poseo una base sólida en desarrollo de software, aplicaciones móviles, gestión de bases de datos y metodologías ágiles.
+                   Soy <span className="font-semibold text-cyan-400">Técnico Superior en Desarrollo de Software</span>, egresado del <span className="font-semibold text-white">Instituto Superior Tecnológico Empresarial Argentino (ISTEA).</span> Me especializo en el desarrollo de aplicaciones web y APIs utilizando .NET y React, con experiencia en arquitectura de sistemas, gestión de bases de datos y metodologías ágiles.
                   </p>
                 </div>
               </div>
