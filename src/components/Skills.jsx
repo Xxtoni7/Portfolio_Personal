@@ -37,7 +37,7 @@ const Skills = () => {
       title: "Backend",
       icon: Server,
       color: "from-purple-400 to-pink-500",
-      skills: ["C#", ".NET", "Entity Framework", "Node.js", "TypeScript"]
+      skills: ["C#", ".NET", "Entity Framework", "TypeScript", "APIs", "JWT / ASP.NET Identity"]
     },
     {
       title: "Frontend",
@@ -55,7 +55,7 @@ const Skills = () => {
       title: "Herramientas",
       icon: Wrench,
       color: "from-orange-400 to-red-500",
-      skills: ["Git", "GitHub", "VS Code", "Figma"]
+      skills: ["Git / GitHub", "Render / Netlify", "Postman / Swagger", "Docker", "Figma", "Scrum"]
     }
   ];
 
