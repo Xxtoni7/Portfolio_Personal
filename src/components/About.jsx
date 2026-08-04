@@ -34,7 +34,7 @@ const About = () => {
               <img 
                 className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-cyan-400/50 shadow-2xl"
                 alt="Antonio Riveros - Programador Full Stack"
-               src={fotoPerfil} />
+                src={fotoPerfil} />
             </div>
           </motion.div>
 
@@ -46,8 +46,7 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg text-slate-300 leading-relaxed">
-              Soy un desarrollador Full Stack con +1 año de experiencia, apasionado por la tecnología y el aprendizaje continuo. 
-              Me encanta enfrentar nuevos desafíos y crear soluciones innovadoras que marquen la diferencia.
+              Soy <span className="font-semibold text-cyan-400">Full Stack Developer</span> con experiencia en el diseño y desarrollo de aplicaciones web y APIs, utilizando .NET / React. Cuento con conocimientos en arquitectura de software, gestión de bases de datos y trabajo bajo metodologías ágiles.
             </p>
 
             <div className="glass-effect rounded-2xl p-6 border border-cyan-400/20">
@@ -55,17 +54,28 @@ const About = () => {
                 <div className="bg-gradient-to-r from-cyan-400 to-blue-600 p-3 rounded-lg">
                   <GraduationCap className="text-white" size={28} />
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="text-xl font-semibold text-cyan-400 mb-2">Formación Académica</h3>
                   <p className="text-slate-300 leading-relaxed">
-                   Soy <span className="font-semibold text-cyan-400">Técnico Superior en Desarrollo de Software</span>, egresado del <span className="font-semibold text-white">Instituto Superior Tecnológico Empresarial Argentino (ISTEA).</span> Me especializo en el desarrollo de aplicaciones web y APIs utilizando .NET y React, con experiencia en arquitectura de sistemas, gestión de bases de datos y metodologías ágiles.
+                    Soy <span className="font-semibold text-cyan-400">Técnico Superior en Desarrollo de Software</span>, egresado del <span className="font-semibold text-white">Instituto Superior Tecnológico Empresarial Argentino (ISTEA).</span>
                   </p>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="mt-4 border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
+                  >
+                    <a href="/Diploma.png" download="Diploma.png">
+                      <Download className="mr-2" size={16} />
+                      Diploma
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>
 
             <p className="text-lg text-slate-300 leading-relaxed">
-              Mi objetivo es seguir creciendo profesionalmente, contribuir a proyectos desafiantes y aplicar mis conocimientos en el desarrollo de soluciones tecnológicas robustas y escalables.
+              <span className="font-semibold text-white">Mi objetivo</span> es seguir creciendo profesionalmente y aplicar mis conocimientos en el desarrollo de soluciones tecnológicas.
             </p>
 
             <div className="flex justify-center mt-8">
@@ -79,7 +89,7 @@ const About = () => {
                   className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-full shadow-lg shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
                 >
                   <Download className="mr-2" size={20} />
-                  Descargar Curriculum Vitae
+                  Descargar CV
                 </Button>
               </a>
             </div>
