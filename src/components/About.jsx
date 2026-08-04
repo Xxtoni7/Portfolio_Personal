@@ -65,7 +65,7 @@ const About = () => {
                     size="sm"
                     className="mt-4 border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
                   >
-                    <a href="/Diploma.png" download="Diploma.png">
+                    <a href={`${import.meta.env.BASE_URL}Diploma.png`} download="Diploma.png">
                       <Download className="mr-2" size={16} />
                       Diploma
                     </a>
@@ -80,7 +80,7 @@ const About = () => {
 
             <div className="flex justify-center mt-8">
               <a
-                href="/CV_Antonio_Riveros.pdf"
+                  href={`${import.meta.env.BASE_URL}CV_Antonio_Riveros.pdf`}
                 download="CV_Antonio_Riveros.pdf"
                 className="block"
               >

@@ -4,6 +4,8 @@ import { ChevronLeft, ChevronRight, ExternalLink, Github, Monitor, Smartphone } 
 import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 
+const publicAsset = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 const projects = [
   {
     title: 'Saas MT-Presupuestos',
@@ -12,8 +14,8 @@ const projects = [
     technologies: ['.NET', 'REACT', 'Tailwind CSS', 'JavaScript', 'SQL Server'],
     demoUrl: 'https://mtpresupuestos.netlify.app/',
     githubUrl: 'https://github.com/Xxtoni7/presupuestos-api',
-    desktopImage: '/images/MTpresupuestos/MTpresupuestos.png',
-    mobileImage: '/images/MTpresupuestos/MTpresupuestosphone.png',
+    desktopImage: publicAsset('images/MTpresupuestos/MTpresupuestos.png'),
+    mobileImage: publicAsset('images/MTpresupuestos/MTpresupuestosphone.png'),
   },
   {
     title: 'Micromecánica Rotania SRL',
@@ -22,8 +24,8 @@ const projects = [
     technologies: ['React', 'Vite', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS'],
     demoUrl: 'https://micromecanicarotania.com/',
     githubUrl: 'https://github.com/Xxtoni7/Micromecanica-Rotania-',
-    desktopImage: '/images/MicromecanicaRotania/RotaniaPc.png',
-    mobileImage: '/images/MicromecanicaRotania/RotaniaMovil.png',
+    desktopImage: publicAsset('images/MicromecanicaRotania/RotaniaPc.png'),
+    mobileImage: publicAsset('images/MicromecanicaRotania/RotaniaMovil.png'),
   },
   {
     title: 'MikelFlash',
@@ -32,8 +34,8 @@ const projects = [
     technologies: ['React', 'Vite', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript'],
     demoUrl: 'https://mikelflash.netlify.app/',
     githubUrl: 'https://github.com/Xxtoni7/MikelFlash-landing',
-    desktopImage: '/images/MikelFlash/MikelFlash.png',
-    mobileImage: '/images/MikelFlash/MikelFlashPhone.png',
+    desktopImage: publicAsset('images/MikelFlash/MikelFlash.png'),
+    mobileImage: publicAsset('images/MikelFlash/MikelFlashPhone.png'),
   },
   {
     title: 'Sistema de Gestión para Ferretería',
@@ -41,12 +43,12 @@ const projects = [
       'Sistema CRUD desarrollado para una ferretería, compuesto por tres servicios independientes: productos, clientes y órdenes. Cada servicio permite crear, editar y eliminar registros, y el módulo de órdenes valida la existencia de clientes y stock disponible antes de generar una venta. Incluye un frontend para la interacción del usuario, garantizando una gestión integral y eficiente del negocio.',
     technologies: ['ASP.NET Core Web API', 'SQL Server', 'Blazor'],
     images: [
-      '/images/GestionFerreteria/GestionFerreteria1.png',
-      '/images/GestionFerreteria/GestionFerreteria2.png',
-      '/images/GestionFerreteria/GestionFerreteria3.png',
-      '/images/GestionFerreteria/GestionFerreteria4.png',
-      '/images/GestionFerreteria/GestionFerreteria5.png',
-      '/images/GestionFerreteria/GestionFerreteria6.png',
+      publicAsset('images/GestionFerreteria/GestionFerreteria1.png'),
+      publicAsset('images/GestionFerreteria/GestionFerreteria2.png'),
+      publicAsset('images/GestionFerreteria/GestionFerreteria3.png'),
+      publicAsset('images/GestionFerreteria/GestionFerreteria4.png'),
+      publicAsset('images/GestionFerreteria/GestionFerreteria5.png'),
+      publicAsset('images/GestionFerreteria/GestionFerreteria6.png'),
     ],
     githubUrl: 'https://github.com/Xxtoni7/GestionFerreteria',
   },
